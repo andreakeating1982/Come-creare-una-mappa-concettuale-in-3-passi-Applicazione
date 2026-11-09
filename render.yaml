@@ -1,0 +1,38 @@
+# Render Blueprint — deploy di «Mappa Concettuale 3 Passi» (app didattica) con un clic
+# --------------------------------------------------------------------------------
+# Come usarlo:
+#   1. Carica questa cartella (app/) su GitHub — vedi ISTRUZIONI-GITHUB.txt / DEPLOY-RENDER.md
+#   2. Vai su https://render.com → New → Blueprint
+#   3. Collega il repository: Render legge questo file e crea il Web Service.
+#
+# L'app didattica (benvenuto + 3 passi + canvas + PDF/PNG) è interamente lato
+# client: NON richiede database né chiavi API. Il server Express serve i file
+# statici + l'health check /_health + il CORS su /fonts (per l'embed con font
+# OpenDyslexic cross-origin). Better Auth si attiva solo se configuri
+# DATABASE_URL + BETTER_AUTH_SECRET (vedi DEPLOY-RENDER.md, Passo 4).
+#
+# Il server ascolta su process.env.PORT (impostata automaticamente da Render).
+
+services:
+  - type: web
+    name: mappa-concettuale-3-passi
+    runtime: node
+    plan: free
+    buildCommand: pnpm install --frozen-lockfile && pnpm build
+    startCommand: pnpm start
+    healthCheckPath: /_health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      # --- Opzionali: attivano Better Auth (pagina /login dello scaffold) ---
+      # - key: DATABASE_URL
+      #   sync: false
+      #   value: postgres://USER:PASSWORD@HOST:5432/DBNAME
+      # - key: BETTER_AUTH_SECRET
+      #   generateValue: true
+      # - key: TRUSTED_ORIGINS
+      #   sync: false
+      #   value: https://mappa-concettuale-3-passi.onrender.com

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="it">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>MAPPA CONCETTUALE - COSTRUISCI LA TUA MAPPA IN 3 PASSI</title>
+    <meta name="description" content="Crea una mappa concettuale in tre passi con rami, parole chiave, parole-legame e immagini. Salva la mappa in PDF o PNG." />
+    <!-- NESSUN font esterno da scaricare: l'app usa OpenDyslexic
+         (auto-ospitato in /fonts, vedi @font-face in src/index.css) e Cambria,
+         che e un font di SISTEMA con ripiego su Georgia/Times New Roman.
+         Il precedente link a Google Fonts chiedeva "family=Cambria", che non
+         esiste su Google Fonts: la richiesta veniva rifiutata dal browser a
+         ogni apertura (ERR_BLOCKED_BY_ORB) e compariva fra le risorse fallite.
+         I due <link rel="preconnect"> non servivano piu a nulla. -->
+    <style>
+      html {
+        background-color: #F5F3ED;
+      }
+      body {
+        background-color: #F5F3ED;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+
+</html>

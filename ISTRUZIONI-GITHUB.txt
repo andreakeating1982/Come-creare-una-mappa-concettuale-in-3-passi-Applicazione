@@ -1,0 +1,85 @@
+========================================
+   PACCHETTO — MAPPA CONCETTUALE 3 PASSI
+========================================
+
+Hai scaricato il progetto completo dell'app didattica
+"Mappa Concettuale 3 Passi" (Vite + React + TypeScript +
+Tailwind + tRPC + Better Auth + Drizzle + Express).
+
+
+DA DOVE COMINCIARE (leggi questi file):
+
+  0. AGENTS.md          -> Istruzioni operative rapide per agenti IA
+                           (GitHub Copilot, Claude, MARKY...): comandi,
+                           file critici, regole d'oro.
+
+  1. GUIDA-IA.md        -> Guida completa per l'intelligenza artificiale:
+                           come RICOSTRUIRE e VARIARE l'app
+                           partendo dalla repository GitHub.
+
+  2. ACCESSIBILITA.md   -> SEZIONE ACCESSIBILITA' (ben segnalata):
+                           TUTTE le misure BES/DSA (font
+                           OpenDyslexic, barra accessibilita',
+                           lettura ad alta voce, ecc.) e come
+                           portarle su altre app simili.
+
+  3. DEPLOY-RENDER.md   -> Come trasferire l'app da Easy-Peasy.AI
+                           a RENDER usando un repository GitHub.
+
+  4. README.md          -> Documentazione generale + embed.
+
+
+L'APP È GIÀ ONLINE (produzione Easy-Peasy.AI):
+  https://mappa-3passi-preview.easy-peasy.site
+
+
+TRASFERIRE SU RENDER (via GitHub):
+
+  1. Crea un repository su github.com
+  2. Carica TUTTI i file di questo pacchetto (root del repo)
+     (NON caricare .env, node_modules, dist)
+  3. Vai su render.com -> New -> Blueprint
+  4. Collega il repository: Render legge render.yaml
+     e crea il Web Service automaticamente.
+     L'app didattica funziona SENZA database.
+     (Auth/DB opzionali: vedi DEPLOY-RENDER.md Passo 4)
+
+  Dettagli: DEPLOY-RENDER.md
+
+
+RICOSTRUIRE L'APP CON L'IA (da GitHub):
+
+  1. git clone https://github.com/<utente>/<repo>.git
+  2. pnpm install
+  3. pnpm check
+  4. pnpm dev        (oppure pnpm build && pnpm start)
+
+  Dettagli e varianti: GUIDA-IA.md
+
+
+STRUTTURA DEL PROGETTO:
+
+  client/            Frontend React + Vite + Tailwind
+                     (pages/Home.tsx = TUTTA l'attivita')
+  server/            Server Express (static + auth + tRPC)
+  shared/            Costanti condivise
+  drizzle/           Schema e migrazioni PostgreSQL
+  cornice-dinamica/  Embed Blogger (dedicata v3 impermeabile,
+                     lite, universale, autosufficiente, test)
+  embed-blogger.html Cornice dedicata pronta da incollare
+  AGENTS.md          Istruzioni rapide per agenti IA
+  render.yaml        Blueprint Render
+  .github/workflows/ CI (build automatica)
+  ACCESSIBILITA.md   Sezione ACCESSIBILITA' (portabile)
+  GUIDA-IA.md        Guida per l'IA
+  DEPLOY-RENDER.md   Guida trasferimento su Render
+
+  Font OpenDyslexic: client/public/fonts/
+
+  Embed per il blog (Blogger):
+  incollare nel post (vista HTML) il contenuto di
+  embed-blogger.html oppure di
+  cornice-dinamica/embed-mappa-3passi-dedicata.html
+
+
+BUON LAVORO! 🗺️
